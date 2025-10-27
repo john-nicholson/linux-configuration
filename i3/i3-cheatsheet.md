@@ -56,13 +56,18 @@ Quick reference for essential i3 keybindings. `Super` = Windows/Command key.
 | `Super + 8` | Go to workspace 8 |
 | `Super + 9` | Go to workspace 9 |
 
-### Move Window to Workspace
+### Move Window to Workspace (Desktop)
 | Key | Action |
 |-----|--------|
 | `Super + Shift + 1` | Move window to workspace 1 |
 | `Super + Shift + 2` | Move window to workspace 2 |
 | `Super + Shift + 3` | Move window to workspace 3 |
-| ... | ... (same pattern for 4-9) |
+| `Super + Shift + 4-9` | Same pattern for workspaces 4-9 |
+
+**How it works:**
+1. Focus the window you want to move (click it or navigate to it)
+2. Press `Super + Shift + [number]` to move it to that workspace
+3. Press `Super + [number]` to follow it there
 
 ## System Control
 
@@ -202,8 +207,30 @@ nm-applet &
 - This file is at: `~/i3/i3-cheatsheet.md`
 - Or check the config: `~/.config/i3/config`
 
+## Customization Quick Reference
+
+### Change XTerm Font Size
+1. Edit: `nano ~/.Xresources`
+2. Add: `XTerm*faceSize: 14` (try 10, 12, 14, 16, 18)
+3. Reload: `xrdb ~/.Xresources`
+4. Open new terminal to test
+
+### Move Status Bar Position
+1. Edit: `nano ~/.config/i3/config`
+2. Find `bar {` section
+3. Change `position top` to `position bottom` (or vice versa)
+4. Reload: `Super + Shift + c`
+
+### Change i3 Font Size (Title Bars)
+1. Edit: `nano ~/.config/i3/config`
+2. Change: `font pango:DejaVu Sans Mono 10` (try 8, 10, 12, 14)
+3. Reload: `Super + Shift + c`
+
+**For detailed customization instructions, see:** `~/i3/customization-guide.md`
+
 ## Learning More
 
 - i3 User's Guide: https://i3wm.org/docs/userguide.html
 - Config file location: `~/.config/i3/config`
 - Edit and reload with `Super + Shift + c`
+- Customization Guide: `~/i3/customization-guide.md`

@@ -16,7 +16,7 @@ exec --no-startup-id xset s 300 dpms 600 900 1200
 
 # i3bar with i3status
 bar {
-  position top
+  position bottom
   status_command i3status
   tray_output primary
 }
