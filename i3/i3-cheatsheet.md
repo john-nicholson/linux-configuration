@@ -131,11 +131,61 @@ Quick reference for essential i3 keybindings. `Super` = Windows/Command key.
 2. Press `Super + f`
 3. Press `Super + f` again to exit fullscreen
 
+## Network & WiFi Configuration
+
+### Method 1: Using nm-applet (GUI - Easiest)
+1. Look for the network icon in the system tray (top-right of status bar)
+2. Click the network manager icon (nm-applet)
+3. Select your WiFi network from the list
+4. Enter password when prompted
+
+### Method 2: Command Line (if nm-applet isn't visible)
+```bash
+# List available WiFi networks
+nmcli device wifi list
+
+# Connect to a network
+nmcli device wifi connect "NETWORK_NAME" password "YOUR_PASSWORD"
+
+# Check connection status
+nmcli device status
+
+# Disconnect
+nmcli device disconnect wlan0
+```
+
+### Method 3: Using nmtui (Text UI)
+```bash
+# Launch text-based network manager UI
+nmtui
+
+# Use arrow keys to navigate:
+# - Select "Activate a connection"
+# - Choose your WiFi network
+# - Enter password
+```
+
+### Troubleshooting WiFi
+```bash
+# Check if NetworkManager is running
+systemctl status NetworkManager
+
+# Start NetworkManager if not running
+sudo systemctl start NetworkManager
+
+# Enable NetworkManager to start at boot
+sudo systemctl enable NetworkManager
+
+# Restart nm-applet if tray icon is missing
+killall nm-applet
+nm-applet &
+```
+
 ## Tips
 
 - **Floating Calculator:** Open calculator app, then `Super + Space` to make it float
 - **Status Bar:** Top bar shows workspaces, system info, and tray icons
-- **Network:** Click nm-applet icon in tray to manage WiFi
+- **Network:** Click nm-applet icon in tray to manage WiFi (see Network & WiFi Configuration above)
 - **Mouse:** Hold `Super` and drag floating windows with mouse
 
 ## Troubleshooting
